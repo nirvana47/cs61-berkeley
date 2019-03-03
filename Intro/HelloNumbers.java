@@ -7,8 +7,10 @@ public class HelloNumbers {
         while (x < 10) {
             System.out.print(y + " ");
             x = x + 1;
-            y=y+x;
+            y = y + x;
         }
         System.out.println();
+        System.out.println(5 + "10"); // 5 gets typecasted as string
+        System.out.println(5 + 10); // since both are ints, we get addition as output
     }
 }
