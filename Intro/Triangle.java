@@ -13,7 +13,7 @@ public class Triangle {
     }
 
     public static void main(String[] args) {
-        drawTriangle(10);
+        drawTriangle(25);
 
     }
 }
