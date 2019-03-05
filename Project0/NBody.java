@@ -8,7 +8,12 @@ public class NBody {
         return radiusUniverse;
     }
 
-    public static Body[] readBodies(String fileName){
-        return Body[];
+    public static Body[] readBodies(String fileName) {
+        In in = new In(fileName);
+        int numOfPlanets = in.readInt();
+        double radiusUniverse = in.readDouble();
+        Body[] bodies = new Body[];
+
+        return bodies;
     }
 }
