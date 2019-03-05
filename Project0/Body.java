@@ -63,12 +63,30 @@ public class Body {
 
     }
 
-    public double calcNetForceExertedByX(Body[] bodies) {
-        return 0.0;
+    public double calcForceExertedByX(Body[] bodies) {
+        double FxNet = 0;
+
+        for (int i = 0; i < bodies.length; i += 1) {
+            if (this.equals(bodies[i])) {
+                continue;
+            }
+            double dX = bodies[i].xxPos - this.xxPos;
+            FxNet += this.calcForceExertedBy(bodies[i]) * dX / this.calcDistance(bodies[i]);
+        }
+        return FxNet;
     }
 
-    public double calcNetForceExertedByY(Body[] bodies){
-        return 0.0;
+    public double calcForceExertedByY(Body[] bodies) {
+        double FyNet = 0;
+
+        for (int i = 0; i < bodies.length; i += 1) {
+            if (this.equals(bodies[i])) {
+                continue;
+            }
+            double dY = bodies[i].yyPos - this.yyPos;
+            FyNet += this.calcForceExertedBy(bodies[i]) * dY / this.calcDistance(bodies[i]);
+        }
+        return FyNet;
     }
 
 }
