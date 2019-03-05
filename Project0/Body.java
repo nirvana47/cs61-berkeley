@@ -63,12 +63,28 @@ public class Body {
 
     }
 
-    public double calcForceExertedByX(Body[] bodies) {
-
+    /**
+     * Unlike the calcForceExertedBy method, which returns the total force, this
+     * method describes the force exerted in the X direction
+     * 
+     * @param b object of class Body which is exerting the force
+     * @return the total force exerted in X direction
+     */
+    public double calcForceExertedByX(Body b) {
+        double dX = b.xxPos - this.xxPos;
+        return (this.calcForceExertedBy(b) * dX) / this.calcDistance(b);
     }
 
-    public double calcForceExertedByY(Body[] bodies) {
-
+    /**
+     * Unlike the calcForceExertedBy method, which returns the total force, this
+     * method describes the force exerted in the Y direction
+     * 
+     * @param b object of class Body which is exerting the force
+     * @return the total force exerted in Y direction
+     */
+    public double calcForceExertedByY(Body b) {
+        double dY = b.yyPos - this.yyPos;
+        return (this.calcForceExertedBy(b) * dY) / this.calcDistance(b);
     }
 
 }
