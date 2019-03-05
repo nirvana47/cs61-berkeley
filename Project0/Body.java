@@ -6,6 +6,7 @@ public class Body {
     public double yyVel;
     public double mass;
     public String imgFileName;
+    public static final double GravConst = 6.67e-11;
 
     // Constructor #1 to be instantiated with values
     public Body(double xP, double yP, double xV, double yV, double m, String img) {
@@ -32,8 +33,8 @@ public class Body {
      * take in a single Body and should return a double equal to the distance
      * between the supplied body and the body that is doing the calculation
      * 
-     * @param b object of class Body
-     * @return
+     * @param b the body from which distance needs to be calculated
+     * @return the distance between the two bodies
      */
     public double calcDistance(Body b) {
 
@@ -42,6 +43,18 @@ public class Body {
         double r = Math.sqrt(Math.pow(dX, 2) + Math.pow(dY, 2));
 
         return r;
+    }
+
+    /**
+     * The method takes in a Body, and returns a double describing the force exerted
+     * on this body by the given body.
+     * 
+     * @param b object of class Body which is exerting the force
+     * @return the force being exerted by the body on the other
+     */
+    public double calcForceExertedBy(Body b) {
+        return (GravConst * this.mass * b.mass) / this.calcDistance(b);
+
     }
 
 }
