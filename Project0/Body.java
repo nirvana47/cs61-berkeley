@@ -40,10 +40,10 @@ public class Body {
 
         // distance on X-axis
         double dX = this.xxPos - b.xxPos;
-        
+
         // distance on Y-axis
         double dY = this.yyPos - b.yyPos;
-        
+
         // r-square = square root of dX-square + dY-square
         double r = Math.sqrt(Math.pow(dX, 2) + Math.pow(dY, 2));
 
