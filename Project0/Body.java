@@ -128,23 +128,33 @@ public class Body {
      * that body to accelerate, and the resulting change in the body’s velocity and
      * position in a small period of time.
      * 
-     * @param time the time in which forces were applied on the body
+     * @param time   the time in which forces were applied on the body
      * @param forceX the net force applied in X direction on the body
      * @param forceY the net force applied in Y direction on the body
      */
     public void update(double time, double forceX, double forceY) {
+        // Calculating Acceleration in X & Y direction using the equation
+        // Force = mass x acceleration
         double accelerateX = forceX / this.mass;
         double accelerateY = forceY / this.mass;
 
+        // Assigning old velocity value to temporary variables, to be used for
+        // calculating latest velocity in X and Y direction
         double xxVelOld = this.xxVel;
         double yyVelOld = this.yyVel;
 
+        // Calculating new velocity using Time, Speed, Distance formula:
+        // New Velocity = Old Velocity + Change in acceleration over time
         this.xxVel = xxVelOld + (time * accelerateX);
         this.yyVel = yyVelOld + (time * accelerateY);
 
+        // Assigning old position value to temporary variables, to be used for
+        // calculating latest position in X and Y co-ordinates
         double xxPosOld = this.xxPos;
         double yyPosOld = this.yyPos;
 
+        // Calculating new position using Time, Speed, Distance formula:
+        // New position = Old position + Distance travelled (i.e. Velocity x Time)
         this.xxPos = xxPosOld + (time * this.xxVel);
         this.yyPos = yyPosOld + (time * this.yyVel);
     }
