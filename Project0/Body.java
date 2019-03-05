@@ -38,8 +38,13 @@ public class Body {
      */
     public double calcDistance(Body b) {
 
+        // distance on X-axis
         double dX = this.xxPos - b.xxPos;
+        
+        // distance on Y-axis
         double dY = this.yyPos - b.yyPos;
+        
+        // r-square = square root of dX-square + dY-square
         double r = Math.sqrt(Math.pow(dX, 2) + Math.pow(dY, 2));
 
         return r;
@@ -53,7 +58,8 @@ public class Body {
      * @return the force being exerted by the body on the other
      */
     public double calcForceExertedBy(Body b) {
-        return (GravConst * this.mass * b.mass) / this.calcDistance(b);
+        // [G x m1 x m2]/[distance-squared]
+        return (GravConst * this.mass * b.mass) / Math.pow(this.calcDistance(b), 2);
 
     }
 
