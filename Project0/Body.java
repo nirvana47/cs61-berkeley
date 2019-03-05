@@ -63,4 +63,8 @@ public class Body {
 
     }
 
+    public double calcNetForceExertedByX(Body[] bodies){
+        return 0.0;
+    }
+
 }
