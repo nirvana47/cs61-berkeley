@@ -87,4 +87,8 @@ public class Body {
         return (this.calcForceExertedBy(b) * dY) / this.calcDistance(b);
     }
 
+    public double calcNetForceExertedByX(Body[] bodies){
+        return 0.0;
+    }
+
 }
