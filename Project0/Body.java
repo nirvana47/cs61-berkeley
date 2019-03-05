@@ -68,7 +68,7 @@ public class Body {
      * method describes the force exerted in the X direction
      * 
      * @param b object of class Body which is exerting the force
-     * @return the total force exerted in X direction
+     * @return Force exerted in X direction
      */
     public double calcForceExertedByX(Body b) {
         double dX = b.xxPos - this.xxPos;
@@ -80,13 +80,20 @@ public class Body {
      * method describes the force exerted in the Y direction
      * 
      * @param b object of class Body which is exerting the force
-     * @return the total force exerted in Y direction
+     * @return Force exerted in Y direction
      */
     public double calcForceExertedByY(Body b) {
         double dY = b.yyPos - this.yyPos;
         return (this.calcForceExertedBy(b) * dY) / this.calcDistance(b);
     }
 
+    /**
+     * Takes in an array of Bodys and calculates the net X force exerted by all
+     * bodies in that array upon the current Body.
+     * 
+     * @param bodies array of bodies which are exerting force on THE body
+     * @return Net Force in X direction
+     */
     public double calcNetForceExertedByX(Body[] bodies) {
         double FxNet = 0.0;
         for (int i = 0; i < bodies.length; i += 1) {
@@ -98,6 +105,13 @@ public class Body {
         return FxNet;
     }
 
+    /**
+     * Takes in an array of Bodys and calculates the net Y force exerted by all
+     * bodies in that array upon the current Body.
+     * 
+     * @param bodies array of bodies which are exerting force on THE body
+     * @return Net Force in Y direction
+     */
     public double calcNetForceExertedByY(Body[] bodies) {
         double FyNet = 0.0;
         for (int i = 0; i < bodies.length; i += 1) {
