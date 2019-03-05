@@ -95,14 +95,14 @@ public class Body {
      * @return Net Force in X direction
      */
     public double calcNetForceExertedByX(Body[] bodies) {
-        double FxNet = 0.0;
+        double netForceX = 0.0;
         for (int i = 0; i < bodies.length; i += 1) {
             if (this.equals(bodies[i])) {
                 continue;
             }
-            FxNet += this.calcForceExertedByX(bodies[i]);
+            netForceX += this.calcForceExertedByX(bodies[i]);
         }
-        return FxNet;
+        return netForceX;
     }
 
     /**
@@ -113,14 +113,31 @@ public class Body {
      * @return Net Force in Y direction
      */
     public double calcNetForceExertedByY(Body[] bodies) {
-        double FyNet = 0.0;
+        double netForceY = 0.0;
         for (int i = 0; i < bodies.length; i += 1) {
             if (this.equals(bodies[i])) {
                 continue;
             }
-            FyNet += this.calcForceExertedByY(bodies[i]);
+            netForceY += this.calcForceExertedByY(bodies[i]);
         }
-        return FyNet;
+        return netForceY;
+    }
+
+    public void update(double time, double forceX, double forceY) {
+        double accelerateX = forceX / this.mass;
+        double accelerateY = forceY / this.mass;
+
+        double xxVelOld = this.xxVel;
+        double yyVelOld = this.yyVel;
+
+        this.xxVel = xxVelOld + (time * accelerateX);
+        this.yyVel = yyVelOld + (time * accelerateY);
+
+        double xxPosOld = this.xxPos;
+        double yyPosOld = this.yyPos;
+
+        this.xxPos = xxPosOld + (time * this.xxVel);
+        this.yyPos = yyPosOld + (time * this.yyVel);
     }
 
 }
