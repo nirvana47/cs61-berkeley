@@ -123,6 +123,15 @@ public class Body {
         return netForceY;
     }
 
+    /**
+     * Method that determines how much the forces exerted on the body will cause
+     * that body to accelerate, and the resulting change in the body’s velocity and
+     * position in a small period of time.
+     * 
+     * @param time the time in which forces were applied on the body
+     * @param forceX the net force applied in X direction on the body
+     * @param forceY the net force applied in Y direction on the body
+     */
     public void update(double time, double forceX, double forceY) {
         double accelerateX = forceX / this.mass;
         double accelerateY = forceY / this.mass;
