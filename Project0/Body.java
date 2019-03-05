@@ -87,12 +87,26 @@ public class Body {
         return (this.calcForceExertedBy(b) * dY) / this.calcDistance(b);
     }
 
-    public double calcNetForceExertedByX(Body[] bodies){
-        return 0.0;
+    public double calcNetForceExertedByX(Body[] bodies) {
+        double FxNet = 0.0;
+        for (int i = 0; i < bodies.length; i += 1) {
+            if (this.equals(bodies[i])) {
+                continue;
+            }
+            FxNet += this.calcForceExertedByX(bodies[i]);
+        }
+        return FxNet;
     }
 
     public double calcNetForceExertedByY(Body[] bodies) {
-        return 0.0;
+        double FyNet = 0.0;
+        for (int i = 0; i < bodies.length; i += 1) {
+            if (this.equals(bodies[i])) {
+                continue;
+            }
+            FyNet += this.calcForceExertedByY(bodies[i]);
+        }
+        return FyNet;
     }
 
 }
