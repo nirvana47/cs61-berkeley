@@ -91,4 +91,8 @@ public class Body {
         return 0.0;
     }
 
+    public double calcNetForceExertedByY(Body[] bodies) {
+        return 0.0;
+    }
+
 }
