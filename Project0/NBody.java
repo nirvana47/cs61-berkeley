@@ -33,4 +33,13 @@ public class NBody {
 
         return bodies;
     }
+
+    public static void main(String[] args) {
+        double T = Double.parseDouble(args[0]);
+        double dT = Double.parseDouble(args[1]);
+        String fileName = args[2];
+        double univRadius = NBody.readRadius(fileName);
+        Body[] bodies = NBody.readBodies(fileName);
+
+    }
 }
