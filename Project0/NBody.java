@@ -14,13 +14,20 @@ public class NBody {
         double radiusUniverse = fName.readDouble();
         Body[] bodies = new Body[5];
         int counter = 0;
+
         while (!fName.isEmpty() && counter < bodies.length) {
-            bodies[counter].xxPos = fName.readDouble();
-            bodies[counter].yyPos = fName.readDouble();
-            bodies[counter].xxVel = fName.readDouble();
-            bodies[counter].yyVel = fName.readDouble();
-            bodies[counter].mass = fName.readDouble();
-            bodies[counter].imgFileName = fName.readString();
+            double xxPos, yyPos, xxVel, yyVel, mass;
+            String imgFileName;
+
+            xxPos = fName.readDouble();
+            yyPos = fName.readDouble();
+            xxVel = fName.readDouble();
+            yyVel = fName.readDouble();
+            mass = fName.readDouble();
+            imgFileName = fName.readString();
+
+            bodies[counter] = new Body(xxPos, yyPos, xxVel, yyVel, mass, imgFileName);
+
             counter += 1;
         }
 
