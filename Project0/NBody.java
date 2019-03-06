@@ -41,5 +41,24 @@ public class NBody {
         double univRadius = NBody.readRadius(fileName);
         Body[] bodies = NBody.readBodies(fileName);
 
+        // Set scale
+        StdDraw.setScale(-1 * univRadius, univRadius);
+
+        // Center Background image
+        StdDraw.picture(0, 0, "./images/starfield.jpg");
+
+        // Draw all the planets
+        int count = 0;
+        while (count < 5) {
+            bodies[count].draw();
+            count += 1;
+        }
+
+        StdDraw.enableDoubleBuffering();
+
+        double time = 0;
+        while (time <= T) {
+            t += dT;
+        }
     }
 }
