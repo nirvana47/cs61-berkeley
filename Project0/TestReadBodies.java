@@ -1,6 +1,6 @@
 /**
- *  Tests Nbody.readBodies. Reads in ./data/planets.txt and checks output of
- *  readBodies().
+ * Tests Nbody.readBodies. Reads in ./data/planets.txt and checks output of
+ * readBodies().
  */
 public class TestReadBodies {
 
@@ -16,8 +16,11 @@ public class TestReadBodies {
     private static String checkReadBodys() {
         System.out.println("Checking readBodies...");
         String planetsTxtPath = "./data/planets.txt";
-        /* If the following line fails to compile, you probably need to make
-         * a certain method static! */
+        /*
+         * If the following line fails to compile, you probably need to make a certain
+         * method static!
+         */
+
         Body[] actualOutput = NBody.readBodies(planetsTxtPath);
 
         /* Check the simple things: */
