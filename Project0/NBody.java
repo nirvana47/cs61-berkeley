@@ -57,8 +57,26 @@ public class NBody {
         StdDraw.enableDoubleBuffering();
 
         double time = 0;
+        double[] xForces = new double[5];
+        double[] yForces = new double[5];
+
         while (time <= T) {
-            t += dT;
+            for (count = 0; count < 5; count += 1) {
+                xForces[count] = bodies[count].calcNetForceExertedByX(bodies);
+                yForces[count] = bodies[count].calcNetForceExertedByY(bodies);
+            }
+
+            StdDraw.picture(0, 0, "./images/starfield.jpg");
+
+            for (count = 0; count < 5; count += 1) {
+                bodies[count].update(dT, xForces[count], yForces[count]);
+                bodies[count].draw();
+            }
+
+            StdDraw.show();
+            StdDraw.pause(10);
+
+            time += dT;
         }
     }
 }
