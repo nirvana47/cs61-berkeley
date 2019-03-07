@@ -1,5 +1,11 @@
 public class NBody {
 
+    /**
+     * Reads the radius of the universe and returns that value
+     * 
+     * @param fileName the file in which this value is stored
+     * @return
+     */
     public static double readRadius(String fileName) {
         In fName = new In(fileName);
         int numOfPlanets = fName.readInt();
@@ -8,6 +14,14 @@ public class NBody {
         return radiusUniverse;
     }
 
+    /**
+     * Acquires data about planets, i.e. for initializing an object of class 'Body',
+     * which would be the planet.
+     * 
+     * @param fileName the text file location where these parameters are stored
+     * @return array object of class NBody with the necessary details about the
+     *         planet bodies
+     */
     public static Body[] readBodies(String fileName) {
         In fName = new In(fileName);
         int numOfPlanets = fName.readInt();
@@ -54,8 +68,11 @@ public class NBody {
             count += 1;
         }
 
+        // To draw off canvas
         StdDraw.enableDoubleBuffering();
 
+        // Variables to increment counter as well as to calculate net X Force and net Y
+        // Force on set of bodies
         double time = 0;
         double[] xForces = new double[5];
         double[] yForces = new double[5];
