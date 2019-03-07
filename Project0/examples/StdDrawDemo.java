@@ -119,8 +119,8 @@ public class StdDrawDemo {
 		/**
 		 * Try commenting out some of these calls and notice the differences.
 		 */
-		drawThree();
+		// drawThree();
 		// drawRandom();
-		// drawZoom();
+		drawZoom();
 	}
 }
