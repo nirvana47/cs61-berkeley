@@ -43,7 +43,7 @@ public class IntList {
 		L = new IntList(-5, L);
 		L = new IntList(-15, L);
 		L = new IntList(35, L);
-		int i = 8;
+		int i = 4;
 
 		System.out.println(L.size());
 		System.out.println(L.iterativeSize());
