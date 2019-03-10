@@ -7,6 +7,10 @@ public class IntList{
 		rest = r;
 	}
 	
+	public int size(){
+		
+	}
+	
 	public static void main(String[] args){
 		IntList L = new IntList(15, null);
 		
