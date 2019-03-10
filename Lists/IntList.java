@@ -8,7 +8,10 @@ public class IntList{
 	}
 	
 	public int size(){
-		
+		if (rest == null){
+			return 1;
+		}
+		return 1 + this.rest.size();
 	}
 	
 	public static void main(String[] args){
