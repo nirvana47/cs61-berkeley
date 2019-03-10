@@ -28,7 +28,10 @@ public class IntList {
 
 	/** Returns the ith value in this list.*/
 	public int get(int i) {
-		return 0;
+		if(i==1){
+			return first;
+		}
+		return this.rest.get(i-1);
 	}
 
 	public static void main(String[] args) {
@@ -40,7 +43,7 @@ public class IntList {
 		L = new IntList(-5, L);
 		L = new IntList(-15, L);
 		L = new IntList(35, L);
-		int i = 3;
+		int i = 8;
 
 		System.out.println(L.size());
 		System.out.println(L.iterativeSize());
