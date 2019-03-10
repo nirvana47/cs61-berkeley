@@ -25,6 +25,7 @@ public class IntList{
 	}
 	
 	
+	
 	public static void main(String[] args){
 		IntList L = new IntList(15, null);
 		
