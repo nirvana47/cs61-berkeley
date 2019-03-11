@@ -4,7 +4,7 @@ public class PassByValueFigure {
         int x = 9;
 
         doStuff(walrus, x);
-        System.out.println(walrus);
+        // System.out.println(walrus);
         System.out.println(x);
     }
 
