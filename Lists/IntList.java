@@ -164,6 +164,17 @@ public class IntList {
 		L = new IntList(-15, L);
 		L = new IntList(35, L);
 		int i = 3;
+		
+		// L.printList();
+		
+		// dSquareList(L);
+		IntList M = squareListRecursive(L);
+		
+		System.out.println("Squared M List:");
+		M.printList();
+		
+		System.out.println("Original L List:");
+		L.printList();
 
 		// incrList(L,i);
 		// System.out.println("Increment List method called");
@@ -179,6 +190,6 @@ public class IntList {
         // run it in the visualizer.
         // System.out.println(L.get(1));
         // System.out.println(incrList(L, 3));
-        System.out.println(dincrList(L, 3));
+        // System.out.println(dincrList(L, 3));
 	}
 } 
