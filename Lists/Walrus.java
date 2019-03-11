@@ -3,7 +3,7 @@ public class Walrus {
     public double tuskSize;
 
     public Walrus(int w, double ts) {
-          weight = w;
-          tuskSize = ts;
+        weight = w;
+        tuskSize = ts;
     }
 }
