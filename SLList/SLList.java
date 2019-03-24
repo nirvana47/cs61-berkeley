@@ -1,6 +1,7 @@
 public class SLList {
 
     private IntNode first;
+    private int size;
 
     private static class IntNode {
         int item;
@@ -14,10 +15,12 @@ public class SLList {
 
     public SLList(int x) {
         first = new IntNode(x, null);
+        size = 1;
     }
 
     public void addFirst(int x) {
         first = new IntNode(x, first);
+        size += 1;
     }
 
     public int getFirst() {
@@ -26,6 +29,7 @@ public class SLList {
 
     public void addLast(int x) {
         IntNode temp = first;
+        size += 1;
         while (temp.next != null) {
             temp = temp.next;
         }
@@ -41,7 +45,7 @@ public class SLList {
     }
 
     public int size() {
-        return size(first);
+        return size;
     }
 
     public static void main(String[] args) {
