@@ -44,13 +44,6 @@ public class SLList {
         temp.next = new IntNode(x, null);
     }
 
-    private static int size(IntNode n) {
-        if (n.next == null) {
-            return 1;
-        }
-        return 1 + size(n.next);
-    }
-
     public int size() {
         return size;
     }
