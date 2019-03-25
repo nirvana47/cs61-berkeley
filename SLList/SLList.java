@@ -19,6 +19,14 @@ public class SLList {
         size = 1;
     }
 
+    public SLList(int[] x) {
+        sentinel = new IntNode(0, null);
+        for (int count = 0; count < x.length; count += 1) {
+            sentinel.next = new IntNode(x[count], sentinel.next);
+            size += 1;
+        }
+    }
+
     public SLList() {
         sentinel = new IntNode(0, null);
         size = 0;
@@ -62,8 +70,8 @@ public class SLList {
     }
 
     public static void main(String[] args) {
-        SLList L1 = new SLList();
-        L1.addFirst(15);
+        SLList L1 = new SLList(new int[] { 15, 25, 3, -5, -15, 22, 52, 14, 33, 1, 0, -92, -22 });
+        // L1.addFirst(15);
         // L1.addFirst(5);
         L1.addLast(10);
 
